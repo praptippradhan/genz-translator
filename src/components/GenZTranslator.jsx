@@ -68,7 +68,7 @@ const GenZTranslator = () => {
                 Translate to Gen Z
             </button>
 
-            <div className="form-group">
+            <div className="form-group" style={{marginTop: '20px'}}>
                 <label htmlFor="translatedText" className="label">Gen Z Translation</label>
                 <div className="output">
                     {translatedText || 'Translation will appear here...'}
