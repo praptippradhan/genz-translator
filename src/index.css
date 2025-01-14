@@ -1,0 +1,73 @@
+.translator-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+.title {
+    font-size: 1.8rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.textarea, .input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: border-color 0.3s;
+}
+
+.textarea:focus, .input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.translate-button, .add-translation-button {
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.translate-button:hover, .add-translation-button:hover {
+    background: #0056b3;
+}
+
+.output {
+    background: #e9ecef;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-height: 50px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.custom-translation {
+    margin-top: 20px;
+}
+
+.section-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #007BFF;
+}
