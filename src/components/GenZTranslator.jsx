@@ -7,6 +7,10 @@ const GenZTranslator = () => {
     const [newWord, setNewWord] = useState('');
     const [newTranslation, setNewTranslation] = useState('');
     const [translations, setTranslations] = useState({
+        'how are you': 'how ya doin?',
+        'what is up': 'wassup',
+        'i am': "I'm",
+        'you are': 'ya',
         'cool': 'lit',
         'very good': 'on fleek',
         'great': 'slaps',
@@ -34,10 +38,14 @@ const GenZTranslator = () => {
     const translateText = () => {
         let translated = inputText.toLowerCase();
 
-        Object.entries(translations).forEach(([standard, genZ]) => {
-            translated = translated.replace(new RegExp(`\\b${standard}\\b`, 'gi'), genZ);
-        });
+        // Sort dictionary by key length to prioritize phrases
+        Object.entries(translations)
+            .sort((a, b) => b[0].length - a[0].length)
+            .forEach(([standard, genZ]) => {
+                translated = translated.replace(new RegExp(`\\b${standard}\\b`, 'gi'), genZ);
+            });
 
+        // Capitalize sentences
         translated = translated
             .split('. ')
             .map(sentence => sentence.charAt(0).toUpperCase() + sentence.slice(1))
@@ -68,7 +76,7 @@ const GenZTranslator = () => {
                 Translate to Gen Z
             </button>
 
-            <div className="form-group" style={{marginTop: '20px'}}>
+            <div className="form-group" style={{ marginTop: '20px' }}>
                 <label htmlFor="translatedText" className="label">Gen Z Translation</label>
                 <div className="output">
                     {translatedText || 'Translation will appear here...'}
